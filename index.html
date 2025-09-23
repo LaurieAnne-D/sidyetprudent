@@ -22,6 +22,45 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 
+<!-- ===== Modale RSVP ===== -->
+<div id="rsvp-modal" class="modal" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
+        <button class="modal__close" type="button" aria-label="Fermer" data-close>×</button>
+
+        <img class="monogram" src="./asset/images/PS-logo2.png" alt="monogram s et p" />
+        <h2 class="names display">PRUDENT<br>& SIDONIE</h2>
+        <!-- Fleur décorative -->
+        <img class="flower" src="./asset/images/fleur3.png" alt="fleur" />
+        <h3 id="rsvp-title" class="modal__title">RSVP</h3>
+        <p class="muted small">Merci de confirmer ta présence.</p>
+
+        <form id="rsvp-form">
+            <label>
+                <span>Nom & prénom</span>
+                <input id="rsvp-name" name="name" type="text" placeholder="Ex. Alex Dupont" required />
+            </label>
+
+            <label>
+                <span>Message</span>
+                <select id="rsvp-msg" name="msg" required>
+                    <option value="">Choisir…</option>
+                    <option>Je serai présent.e le 10 janvier.</option>
+                    <option>Nous serons présents le 10 janvier.</option>
+                    <option>Je ne serai pas être présent.e le 10 janvier.</option>
+                </select>
+            </label>
+
+            <div class="actions">
+                <button id="rsvp-send" class="btn btn--accent" type="submit">Envoyer via WhatsApp</button>
+                <button class="btn" type="button" data-close>Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 <body>
     <!-- HERO rose poudré -->
     <section class="hero-rose">
@@ -47,67 +86,76 @@
             <img class="monogram" src="./asset/images/PS-logo.png" alt="" />
 
             <!-- Bloc intro -->
-            <section class="intro">
-                <h2 class="title">PRUDENT<br>& SIDONIE</h2>
+            <section class="intro reveal reveal-up" data-reveal-once>
+                <h2 class="title reveal reveal-up" data-reveal-once>PRUDENT<br>& SIDONIE</h2>
 
-                <p class="lead">ont l’immense joie de vous annoncer leur mariage et vous invitent à être témoins de leur
-                    engagement le 10 janvier 2026.</p>
+                <div class="reveal reveal-up" data-reveal-once>
+                    <p class="lead">ont l’immense joie de vous annoncer leur mariage et vous invitent à être témoins de
+                        leur
+                        engagement le 10 janvier 2026.</p>
+                </div>
+                <p class="tag reveal reveal-up" data-reveal-once>Celebrate love</p>
 
-                <p class="tag">Celebrate love</p>
-
-                <figure class="frame">
+                <figure class="frame reveal reveal-up" data-reveal-once>
                     <img class="squash" src="./asset/images/squash.jpeg" alt="Lieu de réception avec piscine" />
                 </figure>
 
-                <p class="center big">Nous serions honorés <br> de vous avoir <br> à nos côtés <br> pour célébrer <br>
-                    le début de <br> notre éternité.</p>
-                <p class="mini">Rejoignez-nous au <em>Squash Hôtel à 18h</em> pour un moment d’amour, de rires et de
+                <p class="center big reveal reveal-up" data-reveal-once>Célébrez <br> avec nous, le <br> jour qui ouvre
+                    notre nouveau chapitre.</p>
+                <p class="mini reveal reveal-up" data-reveal-once> Rejoignez-nous au <em>Squash Hôtel à 18h</em> pour un
+                    moment d’amour, de rires et de
                     souvenirs impérissables.</p>
-                <p class="tag tag-amour">Amour, Touours</p>
+                <p class="tag tag-amour reveal reveal-up" data-reveal-once>Amour, Touours</p>
 
-                <figure class="frame small">
+                <figure class="frame small reveal reveal-up" data-reveal-once>
                     <img src="./asset/images/couple.png" alt="Couple" />
                 </figure>
-                <p class="tag tag-noms">Sidy & Prudent</p>
 
-                <p class="quote">Il paraît que l’amour rend patient… La preuve&nbsp;: nous avons pris notre temps mais
+
+                <p class="quote reveal reveal-up" data-reveal-once>Il paraît que l’amour rend patient… <br>La
+                    preuve&nbsp;:
+                    nous avons pris notre temps mais
                     nous y voilà. Une rencontre fortuite, une romance tourbillonnante, et d’innombrables aventures plus
                     tard… nous disons «&nbsp;Je le fais&nbsp;».</p>
-                <p class="tag tag-pq">Et Pourquoi pas ?</p>
+
+                <p class="tag tag-pq reveal reveal-up" data-reveal-once>Et Pourquoi pas ?</p>
             </section>
 
             <!-- Compte à rebours -->
-            <section class="countdown bleed-x" aria-label="Compte à rebours avant le mariage">
-                <div class="cd-item"><span id="cd-days">111</span><small>Jours</small></div>
-                <div class="cd-item"><span id="cd-hours">12</span><small>Heures</small></div>
-                <div class="cd-item"><span id="cd-mins">44</span><small>Minutes</small></div>
-                <div class="cd-item"><span id="cd-secs">30</span><small>Secondes</small></div>
+
+            <section class="countdown bleed-x reveal reveal-wipe" data-reveal-once data-countdown="2026-01-10T15:00:00">
+                <!-- spans avec ces IDs : -->
+                <div class="cd-item"><span id="cd-days">00</span><small>Jours</small></div>
+                <div class="cd-item"><span id="cd-hours">00</span><small>Heures</small></div>
+                <div class="cd-item"><span id="cd-mins">00</span><small>Minutes</small></div>
+                <div class="cd-item"><span id="cd-secs">00</span><small>Secondes</small></div>
             </section>
+
 
             <!-- Itinéraire / Wedding day -->
             <section class="day">
-                <h2> Itinéraire </h2>
-                <p class="tag tag-day">Wedding day</p>
-                <figure class="frame">
+                <h2 class="reveal reveal-up" data-reveal-once> Itinéraire </h2>
+                <p class="tag tag-day reveal reveal-up" data-reveal-once>Wedding day</p>
+                <figure class="frame reveal reveal-up" data-reveal-once>
                     <img src="./asset/images/eglise.png" alt="Église" />
                 </figure>
 
-                <div class="program">
-                    <div class="prog-item">
+                <div class="program timeline" data-stagger="90">
+                    <div class="prog-item tl-item reveal reveal-left">
                         <h4>CÉRÉMONIE CIVILE</h4>
                         <p>Mairie du François</p>
                     </div>
-                    <div class="prog-item">
+                    <div class="prog-item tl-item reveal reveal-left">
                         <h4>CÉRÉMONIE RELIGIEUSE</h4>
                         <p>Paroisse St Michel du François — 15h</p>
                     </div>
-                    <div class="prog-item">
+                    <div class="prog-item tl-item reveal reveal-left">
                         <h4>RÉCEPTION</h4>
                         <p>Squash Hôtel — à partir de 18h</p>
                     </div>
                 </div>
 
-                <div class="map-card">
+                <div class="map-card reveal reveal-up" data-reveal-once>
                     <div class="map-placeholder"><iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7721.823656388741!2d-61.079556399999994!3d14.604098400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c6aa71c9c085baf%3A0x9270da300d94d018!2sKaribea%20Squash%20H%C3%B4tel!5e0!3m2!1sfr!2sfr!4v1758498169697!5m2!1sfr!2sfr"
                             width="312" height="350" style="border:0;" allowfullscreen="" loading="lazy"
@@ -116,37 +164,62 @@
             </section>
 
             <!-- FAQ -->
-            <section class="faq">
+            <section class="faq reveal reveal-up">
                 <h3 class="center">FAQ</h3>
-                <details>
-                    <summary>Y a‑t‑il un dress code ?</summary>
-                    <p>Oui, tenue semi‑formelle, merci d’éviter le blanc cassé.</p>
+                <details class="faq-item">
+                    <summary>Il y a-t-il un code couleur conseillé ?</summary>
+                    <div class="faq-content">
+                        <div class="faq-content-inner"></div>
+                        <p>À suivre si vous le souhaitez :</p>
+                        <ul>
+                            <li class="cc-rose"></li>
+                            <li class="cc-rose-clair"></li>
+                            <li class="cc-vert"></li>
+                            <li class="cc-olive"></li>
+                        </ul>
+                        <p>— sans obligation.</p>
+                    </div>
+                    </div>
                 </details>
-                <details>
-                    <summary>Peut‑on venir avec des enfants ?</summary>
-                    <p>Oui, un coin calme sera prévu.</p>
+                <details class="faq-item">
+                    <summary>Le menu conviendra-t-il aux régimes particuliers ?</summary>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p> Oui, le buffet varié est pensé pour satisfaire différents régimes (végé, sans porc, sans
+                                gluten, etc.). Pour un point précis, contacte-nous.</p>
+                        </div>
+                    </div>
                 </details>
-                <details>
+                <details class="faq-item">
                     <summary>Où se garer ?</summary>
-                    <p>Parkings à proximité des lieux. Ajoute tes liens Google Maps.</p>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>Parkings à proximité des lieux.</p>
+                        </div>
+                    </div>
                 </details>
             </section>
 
             <!-- RSVP bandeau olive -->
             <section class="rsvp-band bleed-x" id="rsvp">
-                <div class="rsvp-inner">
+                <div class="rsvp-inner reveal reveal-up" data-reveal-once>
                     <h3>Répondez s’il vous plaît</h3>
-                    <p>Veuillez nous faire savoir si vous serez en mesure de vous joindre à nous pour célébrer notre
-                        journée spéciale. Merci de répondre avant le 1er décembre 2025.</p>
-                    <a class="btn-cta" href="#" target="_blank" rel="noopener">RSVP</a>
+                    <p>Un petit mot pour confirmer votre présence avant le 1er décembre 2025.</p>
+                    <a id="rsvp-open" class="btn-cta btn btn--accent" href="#rsvp" target="_blank"
+                        rel="noopener">RSVP</a>
                 </div>
             </section>
 
+            <div class="citations reveal reveal-up" data-reveal-once>
+                <p>Il fait toute chose belle au bon moment - Eccl 3:11.</p>
+                <p>L’amour pardonne, fait confiance, espère et persévère ; il ne finit jamais - 1 Co 13:7-8.</p>
+            </div>
+
             <!-- Outro avec grand visuel -->
             <section class="outro">
-                <img class="monogram small" src="./asset/images/PS-logo.png" alt="" />
-                <h2 class="title center">PRUDENT<br>& SIDONIE</h2>
-                <figure class="frame illus">
+                <img class="monogram small reveal reveal-up" data-reveal-once src="./asset/images/PS-logo.png" alt="" />
+                <h2 class="title center reveal reveal-up" data-reveal-once>PRUDENT<br>& SIDONIE</h2>
+                <figure class="frame illus reveal reveal-up" data-reveal-once>
                     <img src="./asset/images/coupledess.png" alt="Portrait" />
                 </figure>
             </section>
@@ -158,29 +231,7 @@
         <p>© 2026 Prudent & Sidonie — Tous droits réservés</p>
     </footer>
 
-    <!-- Compte à rebours JS: change la date ci‑dessous -->
-    <script>
-        (function () {
-            const target = new Date('2026-01-10T15:00:00'); // heure locale
-            const $d = document.getElementById('cd-days');
-            const $h = document.getElementById('cd-hours');
-            const $m = document.getElementById('cd-mins');
-            const $s = document.getElementById('cd-secs');
-            function tick() {
-                const now = new Date();
-                let diff = Math.max(0, target - now);
-                const d = Math.floor(diff / 86400000); diff -= d * 86400000;
-                const h = Math.floor(diff / 3600000); diff -= h * 3600000;
-                const m = Math.floor(diff / 60000); diff -= m * 60000;
-                const s = Math.floor(diff / 1000);
-                if ($d) { $d.textContent = d.toString().padStart(2, '0'); }
-                if ($h) { $h.textContent = h.toString().padStart(2, '0'); }
-                if ($m) { $m.textContent = m.toString().padStart(2, '0'); }
-                if ($s) { $s.textContent = s.toString().padStart(2, '0'); }
-            }
-            tick(); setInterval(tick, 1000);
-        })();
-    </script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
