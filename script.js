@@ -1,3 +1,11 @@
+// Smooth scroll to targets
+document.querySelectorAll('[data-scroll-to]').forEach(btn => {
+    btn.addEventListener('click', e => {
+        const target = document.querySelector(btn.dataset.scrollTo);
+        if (target) { target.scrollIntoView({ behavior: 'smooth' }) }
+    });
+});
+
 // Animations au scroll (IntersectionObserver)
 // - .reveal + variante (.reveal-up / .reveal-left / .reveal-right / .reveal-zoom / .reveal-wipe)
 // - data-stagger="80" sur un conteneur pour décaler les enfants .reveal (cascade)

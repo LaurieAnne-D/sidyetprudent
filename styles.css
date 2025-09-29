@@ -222,17 +222,20 @@ button {
 }
 
 /* ===== Keyframes ===== */
-@keyframes moveUpDown {
+
+@keyframes scroll {
     0% {
-        transform: translateY(0);
+        opacity: 1;
+        transform: translate(-50%, 0)
     }
 
-    50% {
-        transform: translateY(-5px);
+    80% {
+        opacity: 0;
+        transform: translate(-50%, 22px)
     }
 
     100% {
-        transform: translateY(0);
+        opacity: 0
     }
 }
 
@@ -280,21 +283,37 @@ button {
     opacity: .95
 }
 
-.chevrons {
-    display: grid;
-    z-index: 1002;
-    place-items: center;
-    gap: 6px;
-    margin: 28px 0 10px;
-    animation: moveUpDown 1s infinite alternate;
-}
-
 .chevrons span {
     width: 14px;
     height: 14px;
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
     transform: rotate(45deg)
+}
+
+.scroll-indicator {
+    margin-top: 28px;
+    width: 38px;
+    height: 58px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    z-index: 1002;
+    margin: 28px 0 10px;
+}
+
+.scroll-indicator span {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    animation: scroll 1.6s infinite;
 }
 
 /* ===== Mise en page feuille + gouttières ===== */
