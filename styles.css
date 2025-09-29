@@ -750,8 +750,8 @@ a.btn-cta {
 }
 
 .site-footer {
-    background-color: var(--rose);
-    padding: 26px 18px;
+    background-color: var(--rose-soft);
+    padding: 4px;
     text-align: center;
     color: #8b8e98
 }
