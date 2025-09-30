@@ -749,7 +749,7 @@ a.btn-cta {
 .outro {
     margin-top: 100px;
     padding-top: inherit;
-    background: url('asset/images/fleurs-outro.jpg') center/cover no-repeat fixed;
+    background: url('asset/images/fleurs-outro.jpg') center/cover no-repeat;
 }
 
 .illus {
